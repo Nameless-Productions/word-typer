@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import createWord from "./lib/createWord";
+import formatTime from "./lib/formatTime";
 
 export default function App() {
   const [word, setWord] = useState("");
@@ -8,12 +9,14 @@ export default function App() {
   const [submitWord, setSubmitWord] = useState("");
   const [succesMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const startTime = useRef(Date.now())
 
   const updateWord = async (cancelled: boolean) => {
     if(cancelled) return
     const newWord = await createWord()
     if(!newWord) return setErrorMsg("Error while getting new word")
     setWord(newWord)
+  startTime.current = Date.now()
   }
 
   useEffect(() => {
@@ -27,6 +30,7 @@ export default function App() {
       setSuccessMsg("Correct!")
 
       setWord("")
+      setTime(formatTime(Date.now() - startTime.current))
 
       setTimeout(() => {
         setSuccessMsg("")
