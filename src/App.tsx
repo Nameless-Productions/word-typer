@@ -1,5 +1,5 @@
 export default function App() {
-  return (
-    <div>App</div>
-  )
+  return (<>
+    <p>meow</p>
+  </>)
 }
