@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://thenamelessdev.github.io/word-typer",
+  "homepage": "https://nameless-productions.github.io/word-typer",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
