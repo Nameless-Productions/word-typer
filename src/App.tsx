@@ -1,5 +1,5 @@
 export default function App() {
   return (<>
-    <p>meow</p>
+    <p className="font-bold text-xl">Word Typer</p>
   </>)
 }
