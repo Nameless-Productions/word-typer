@@ -26,6 +26,7 @@ export default function App() {
 
   useEffect(() => {
     if(word === "") return
+    setSubmitWord(w => w.toLowerCase())
     if(submitWord === word) {
       setSuccessMsg("Correct!")
 
@@ -36,7 +37,7 @@ export default function App() {
         setSuccessMsg("")
         setSubmitWord("")
         updateWord(false)
-      }, 2000);
+      }, 1000);
     }
   }, [submitWord])
 
